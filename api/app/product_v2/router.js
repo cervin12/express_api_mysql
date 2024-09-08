@@ -13,7 +13,7 @@ router.post("/product", upload.single("image_url"), async (req, res) => {
       price,
       stock,
       status,
-      image_url: `localhost:3001/${image.path}`,
+      image_url: `${req.baseUrl}/${image.path}`
     });
     res.send({
       result: result,
@@ -89,7 +89,7 @@ router.put('/product/:id', upload.single('image_url'), async (req,res)=>{
         stock,
         status,
         user_id,
-        image_url: `localhost:3001/${image.path}`
+        image_url: `${req.baseUrl}/${image.path}`
       }, {
         where: {
           id: req.params.id
