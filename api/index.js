@@ -20,7 +20,8 @@ app.use('/api/v1', productRouter);
 app.use('/api/v2', productRouterV2);
 app.use('/',(req,res)=>{
   res.send({
-    message: 'Welcome to my express'
+    message: 'Welcome to my express',
+    status: 'success'
   })
 })
 app.use((req,res)=>{
